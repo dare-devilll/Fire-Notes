@@ -19,41 +19,37 @@ class _NoteReaderScreenState extends State<NoteReaderScreen> {
     int colorId = widget.doc['color_id'];
 
     return Scaffold(
+      backgroundColor: AppStyle.cardColor[colorId],
+      appBar: AppBar(
         backgroundColor: AppStyle.cardColor[colorId],
-        appBar: AppBar(
-          backgroundColor: AppStyle.cardColor[colorId],
-          elevation: 0.0,
-        ),
-        body: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  widget.doc["note_title"],
-                  style: AppStyle.mainTile,
-                ),
-                const SizedBox(
-                  height: 4.0,
-                ),
-                Text(
-                  widget.doc["creation_date"],
-                  style: AppStyle.dateTitle,
-                ),
-                const SizedBox(
-                  height: 28.0,
-                ),
-                Text(
-                  widget.doc["note_content"],
-                  style: AppStyle.mainContent,
-                  overflow: TextOverflow.visible,
-                )
-              ],
-            )),
-        floatingActionButton: FloatingActionButton.extended(
-          onPressed: () {},
-          label: Text("delete Note"),
-          icon: const Icon(Icons.delete),
-        ));
+        elevation: 0.0,
+      ),
+      body: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                widget.doc["note_title"],
+                style: AppStyle.mainTile,
+              ),
+              const SizedBox(
+                height: 4.0,
+              ),
+              Text(
+                widget.doc["creation_date"],
+                style: AppStyle.dateTitle,
+              ),
+              const SizedBox(
+                height: 28.0,
+              ),
+              Text(
+                widget.doc["note_content"],
+                style: AppStyle.mainContent,
+                overflow: TextOverflow.visible,
+              )
+            ],
+          )),
+    );
   }
 }
